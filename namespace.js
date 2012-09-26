@@ -9,7 +9,7 @@ namespace = function(n) {
     eval(e);
     for (var i=1; i<s.length; i++) {
         var ns = '';
-        for (var p=0; p<i; p++) {
+        for (var p=0; p<=i; p++) {
             if (ns.length > 0) ns += '.';
             ns += s[p];
         }
