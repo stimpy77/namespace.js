@@ -11,6 +11,12 @@ Example:
     a.b.c.d = {  // does not throw an error saying "'a' does not exist"
         x: 'y'
     };
+    
+    x = {};
+    x.y = {};
+    x.y.z = 'dog';
+    namespace('x.y.z');
+    alert(x.y.z); // namespace(..) did not clobber anything
 
 For more information, check out my blog post:
 
