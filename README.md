@@ -8,8 +8,8 @@ by Jon Davis
 Example:
 
     namespace('a.b.c');
-    a.b.c.d = {  // does not throw an error saying "'a' does not exist"
-        x: 'y'
+    a.b.c.d = {  // Does not throw an error saying "'a' does not exist"
+        x: 'y'   // .. nor for that matter a.b, or a.b.c.
     };
     
     x = {};
