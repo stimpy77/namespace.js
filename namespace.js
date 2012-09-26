@@ -1,5 +1,5 @@
 // Author: Jon Davis <jon@jondavis.net>
-// Version: 1.0
+// Version: 1.0.1
 // https://github.com/stimpy77/namespace.js
 
 namespace = function(n) {
