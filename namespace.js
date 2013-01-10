@@ -13,11 +13,10 @@ function namespace(nss, obj) {
       if (isWinJS) {
         if (i == 0) WinJS.Namespace.define(x, ns.length > 1 ? undefined : obj);
         else if (i != ns.length - 1) WinJS.Namespace.defineWithParent(g, x);
-        else WinJS.Namespace.defineWithParent(g, x, obj);
+        else return WinJS.Namespace.defineWithParent(g, x, obj);
       } else {
         if (i == ns.length - 1 && obj !== undefined && obj !== null) {
           g[x] = obj;
-          return obj;
         } else {
           g[x] = {};
         }
@@ -25,4 +24,5 @@ function namespace(nss, obj) {
     }
     g = g[x];
   }
+  return g;
 }
