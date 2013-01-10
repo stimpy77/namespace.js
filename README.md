@@ -3,7 +3,7 @@ namespace.js
 
 by Jon Davis
 
-*Very* small and simple function that auto-generates and establishes a deeply nested Javascript namespace without clobbering an existing match.
+Small and simple function that auto-generates and establishes a deeply nested Javascript namespace without clobbering an existing match. Also natively uses WinJS's namespacing (this function becomes an alias of WinJS.Namespace.define) if WinJS is detected.
 
 Example:
 
