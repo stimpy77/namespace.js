@@ -18,14 +18,15 @@ Example:
     x.y = {};
     x.y.z = 'dog';
     namespace('x.y.z');
-    alert(x.y.z); // namespace(..) did not clobber anything
+    alert(x.y.z); // alerts 'dog'; namespace(..) did not clobber anything
 
 It also supports object assignment to nested namespaces.
 
-    namespace('myapp.util', {
+    var ns = namespace('myapp.util', {
         add : function(p1,p2) { return p1+p2; }
     });
     alert(myapp.util.add(2,2)); // alerts '4'
+    alert(ns.add(3,4)); // alerts '12
 
 The goal is coding brevity and elegance.
 
