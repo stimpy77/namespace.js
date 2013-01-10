@@ -24,7 +24,7 @@ Example 2:
     namespace('x.y.z');
     alert(x.y.z); // alerts 'dog'; namespace(..) did not clobber anything
 
-It returns the specified namespace as the namespace object, and it also supports object assignment to nested namespaces.
+It returns the specified namespace as the namespace object, and it also supports object assignment during namespace declaration.
 
     var ns = namespace('myapp.util', {
         add : function(p1,p2) { return p1+p2; }
