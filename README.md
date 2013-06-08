@@ -7,8 +7,6 @@ Small and simple function that auto-generates and establishes a deeply nested Ja
 
 The goal is coding brevity and elegance.
 
-Works independently, but will also use WinJS's namespacing if WinJS is detected (this function becomes an alias/wrapper for *WinJS.Namespace.define()/defineWithParent()*).
-
 Example:
 
     namespace('a.b.c');
