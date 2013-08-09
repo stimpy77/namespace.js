@@ -28,7 +28,19 @@ It returns the specified namespace as the namespace object, and it also supports
         add : function(p1,p2) { return p1+p2; }
     });
     alert(myapp.util.add(2,2)); // alerts '4'
-    alert(ns.add(3,4)); // alerts '12'
+    alert(ns.add(3,4)); // alerts '7'
+
+You can also use closure scope, as well as wrap the context to a container namespace. Whatever is returned is merged.
+
+    var ab_context = namespace('a.b');
+    var nsimpl = namespace.call(ab_context, 'impl', function() {
+        var x = 1+2;
+        this.y = x+2;
+        return {
+            x : x
+        };
+    });
+    log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
 
 For more information, check out my blog post:
 
