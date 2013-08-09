@@ -10,8 +10,14 @@ function namespace(nss, obj) {
 
     if (!exist) {
         if (i == ns.length - 1 && obj !== undefined && obj !== null) {
-          if (typeof obj === 'function') obj = obj.call(this);
-          g[x] = obj;
+            if (typeof(obj) === 'function') {
+                var ctx = {};
+                obj = obj.call(ctx) || ctx;
+                for (var p in ctx) { // merge
+                    if (ctx.hasOwnProperty(p)) obj[p]=ctx[p];
+                }
+            }
+            g[x] = obj;
         } else {
           g[x] = {};
         }
