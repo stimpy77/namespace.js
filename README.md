@@ -30,7 +30,7 @@ It returns the specified namespace as the namespace object, and it also supports
     alert(myapp.util.add(2,2)); // alerts '4'
     alert(ns.add(3,4)); // alerts '7'
 
-You can also use closure scope, as well as wrap the context to a container namespace. Whatever is modified in the context returned is the closure's output.
+You can also use closure scope, as well as wrap the context to a container namespace. Whatever is modified in the context returned is merged with the closure's output.
 
     var ab_context = namespace('a.b');
     var nsimpl = namespace.call(ab_context, 'impl', function() {
