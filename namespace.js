@@ -10,6 +10,7 @@ function namespace(nss, obj) {
 
     if (!exist) {
         if (i == ns.length - 1 && obj !== undefined && obj !== null) {
+          if (typeof obj === 'function') obj = obj.call(this);
           g[x] = obj;
         } else {
           g[x] = {};
