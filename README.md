@@ -46,10 +46,10 @@ You can wrap the context to a container namespace.
 
     var ab_context = namespace('a.b');
     var nsimpl = namespace.call(ab_context, 'impl', function() {
-        var x = 1+2;
-        this.y = x+2;
+        var x = 1+2
         return {
-            x : x
+            x : x,
+            y : x+2
         };
     });
     log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
