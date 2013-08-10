@@ -30,7 +30,7 @@ It returns the specified namespace as the namespace object, and it also supports
     alert(myapp.util.add(2,2)); // alerts '4'
     alert(ns.add(3,4)); // alerts '7'
 
-You can also use a revealing module pattern. The context ("this") is the new namespace. Whatever is modified in the context returned is merged with the closure's output. 
+You can use a revealing module pattern. The context ("this") is the new namespace. Whatever is modified in the context returned is merged with the closure's output. 
 
     var nsimpl = namespace('a.b.impl', function() {
         var x = 1+2;
@@ -42,7 +42,7 @@ You can also use a revealing module pattern. The context ("this") is the new nam
     log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
 
 
-You can wrap the context to a container namespace.
+You can wrap the context namespace to a container namespace.
 
     var ab_context = namespace('a.b');
     var nsimpl = namespace.call(ab_context, 'impl', function() {
