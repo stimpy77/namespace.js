@@ -39,7 +39,7 @@ You can use a revealing module pattern. The context ("this") is the new namespac
             x : x     // revealed (public)
         };
     });
-    log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
+    console.log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
 
 
 You can wrap the context namespace to a container namespace.
@@ -52,7 +52,7 @@ You can wrap the context namespace to a container namespace.
             y : x+2  // revealed (public)
         };
     });
-    log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
+    console.log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
 
 For more information on the origin of this, check out my blog post:
 
