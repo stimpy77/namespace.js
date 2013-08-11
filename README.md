@@ -3,7 +3,7 @@ namespace.js
 
 by Jon Davis
 
-Small and simple function that auto-generates and establishes a deeply nested Javascript namespace without clobbering an existing match. 
+Small and simple function that auto-generates and establishes a deeply nested Javascript namespace without clobbering an existing match, and supports a revealing module pattern. 
 
 The goal is coding brevity and elegance.
 
