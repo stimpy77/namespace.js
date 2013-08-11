@@ -33,10 +33,10 @@ It returns the specified namespace as the namespace object, and it also supports
 You can use a revealing module pattern. The context ("this") is the new namespace. Whatever is modified in the context returned is merged with the closure's output. 
 
     var nsimpl = namespace('a.b.impl', function() {
-        var x = 1+2;
-        this.y = x+2;
+        var x = 1+2;  // private
+        this.y = x+2; // public
         return {
-            x : x
+            x : x     // revealed (public)
         };
     });
     log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
@@ -46,10 +46,10 @@ You can wrap the context namespace to a container namespace.
 
     var ab_context = namespace('a.b');
     var nsimpl = namespace.call(ab_context, 'impl', function() {
-        var x = 1+2
+        var x = 1+2; // private
         return {
-            x : x,
-            y : x+2
+            x : x,   // revealed (public)
+            y : x+2  // revealed (public)
         };
     });
     log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
