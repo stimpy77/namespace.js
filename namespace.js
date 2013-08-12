@@ -1,4 +1,4 @@
-// Version: 1.3
+// Version: 1.3.1
 // https://github.com/stimpy77/namespace.js
 
 function namespace(nss, obj) {
@@ -7,11 +7,11 @@ function namespace(nss, obj) {
   for (var i = 0, n = ns.length; i < n; i++) {
     var x = ns[i];
     var exist = (x in g === true);
-
-    if (!exist) {
-        if (i == ns.length - 1 && obj !== undefined && obj !== null) {
+    var isns = i == ns.length - 1 && obj !== undefined && obj !== null;
+    if (!exist || isns) {
+        if (isns) {
             if (typeof(obj) === 'function') {
-                var ctx = {};
+                var ctx = isns ? g[x] : {};
                 obj = obj.call(ctx) || ctx;
                 for (var p in ctx) { // merge
                     if (ctx.hasOwnProperty(p)) obj[p]=ctx[p];
