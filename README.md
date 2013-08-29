@@ -51,6 +51,20 @@ You can wrap the context namespace to a container namespace.
         };
     });
     console.log(JSON.stringify({a: a})); // outputs {"a":{"b":{"impl":{"x":3,"y":5}}}}
+    
+No feature is required to support arguments in an IIFE wrapper, this is a core Javascript feature.
+
+    var args = [jQuery, {other: function() { alert('other'); } } ];
+    (function($, o) { // $ as a parameter is defined as jQuery in args array
+        namespace("myJqueryDependentThing", function() {
+            o.other();
+            return {
+                doSomething: function(el) {
+                    return $(el).text("something");
+                }
+            };
+        });
+    }).apply(this, args);
 
 For more information on the origin of this, check out my blog post:
 
