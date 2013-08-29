@@ -65,6 +65,7 @@ No feature is required to support arguments in an IIFE wrapper, this is a core J
             };
         });
     }).apply(this, dependencies);
+    myJqueryDependentThing.doSomething(document.getElementById('myel')); // results in an alert and a text fill
 
 For more information on the origin of this, check out my blog post:
 
