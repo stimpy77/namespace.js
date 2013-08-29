@@ -54,7 +54,7 @@ You can wrap the context namespace to a container namespace.
     
 No feature is required to support arguments in an IIFE wrapper, this is a core Javascript feature.
 
-    var args = [jQuery, {other: function() { alert('other'); } } ];
+    var dependencies = [jQuery, {other: function() { alert('other'); } } ];
     (function($, o) { // $ as a parameter is defined as jQuery in args array
         namespace("myJqueryDependentThing", function() {
             o.other();
@@ -64,7 +64,7 @@ No feature is required to support arguments in an IIFE wrapper, this is a core J
                 }
             };
         });
-    }).apply(this, args);
+    }).apply(this, dependencies);
 
 For more information on the origin of this, check out my blog post:
 
