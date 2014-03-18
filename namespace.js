@@ -14,7 +14,7 @@ function namespace(nss, obj) {
                 var ctx = isns ? g[x] : {};
                 obj = obj.call(ctx) || ctx;
                 for (var p in ctx) { // merge
-                    if (ctx.hasOwnProperty(p)) obj[p]=ctx[p];
+                    if (ctx.hasOwnProperty(p) && !obj.hasOwnProperty(p)) obj[p]=ctx[p];
                 }
             }
             g[x] = obj;
