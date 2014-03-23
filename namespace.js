@@ -1,4 +1,4 @@
-// Version: 1.3.1
+// Version: 1.3.2
 // https://github.com/stimpy77/namespace.js
 
 function namespace(nss, obj) {
