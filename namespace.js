@@ -26,7 +26,11 @@
     }
     return g;
   }
-  if (typeof(exports) === "undefined") {
-    ((function () { return this ? this : window; }).call(this)).namespace = namespace;
-  } else {exports.namespace = namespace;}  
+  if (typeof(module) !== "undefined" && !!module.exports) {
+    module.exports.namespace = namespace;
+  }  
+  var ctx = ((function () { return this ? this : window; }).call(this));
+  if (!ctx.namespace) {
+    ctx.namespace = namespace;
+  }
 }());
