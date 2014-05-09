@@ -11,7 +11,7 @@
             if (!exist || isns) {
                 if (isns) {
                     if (typeof (obj) === 'function') {
-                        var ctx = isns ? g[x] : {};
+                        var ctx = isns ? g[x] || {} : {};
                         obj = obj.call(ctx) || ctx;
                         for (var p in ctx) { // merge
                             if (ctx.hasOwnProperty(p) && !obj.hasOwnProperty(p)) obj[p] = ctx[p];
